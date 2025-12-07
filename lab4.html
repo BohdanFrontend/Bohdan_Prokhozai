@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма замовлення (BEM)</title>
+    <style>
+        /* Базові налаштування */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* --- БЛОК: .order-form --- */
+        .order-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        /* ЕЛЕМЕНТ: Заголовок */
+        .order-form__title {
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* ЕЛЕМЕНТ: Група полів (обгортка) */
+        .order-form__group {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ЕЛЕМЕНТ: Підзаголовок групи (для радіо/чекбоксів) */
+        .order-form__group-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        /* ЕЛЕМЕНТ: Лейбл (підпис) */
+        .order-form__label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* ЕЛЕМЕНТ: Інпут (текстовий) */
+        .order-form__input {
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Стан фокусу для інпуту (модифікація через псевдоклас) */
+        .order-form__input:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+
+        /* ЕЛЕМЕНТ: Опція (обгортка для радіо/чекбокса + текст) */
+        .order-form__option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        /* ЕЛЕМЕНТ: Сам чекбокс/радіо (трохи збільшимо) */
+        .order-form__radio,
+        .order-form__checkbox {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            accent-color: #ff6b6b; /* Колір галочки/кружечка */
+            cursor: pointer;
+        }
+
+        /* ЕЛЕМЕНТ: Текст опції */
+        .order-form__option-text {
+            color: #444;
+            font-size: 15px;
+        }
+
+        /* ЕЛЕМЕНТ: Кнопка */
+        .order-form__button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        /* МОДИФІКАТОР: Кнопка при наведенні */
+        .order-form__button:hover {
+            background-color: #ff4757;
+        }
+
+    </style>
+</head>
+<body>
+
+    <form class="order-form" action="#" method="POST">
+        
+        <h2 class="order-form__title">🍕 Замовлення піци</h2>
+
+        <div class="order-form__group">
+            <label class="order-form__label" for="client-name">Ваше ім'я</label>
+            <input class="order-form__input" type="text" name="client_name" id="client-name" placeholder="Введіть ім'я" required>
+        </div>
+
+        <div class="order-form__group">
+            <span class="order-form__group-title">Розмір тіста:</span>
+            
+            <label class="order-form__option">
+                <input class="order-form__radio" type="radio" name="pizza_size" value="standard" checked>
+                <span class="order-form__option-text">Стандартне (30 см)</span>
+            </label>
+
+            <label class="order-form__option">
+                <input class="order-form__radio" type="radio" name="pizza_size" value="large">
+                <span class="order-form__option-text">Велике (45 см)</span>
+            </label>
+
+            <label class="order-form__option">
+                <input class="order-form__radio" type="radio" name="pizza_size" value="xxl">
+                <span class="order-form__option-text">XXL для компанії</span>
+            </label>
+        </div>
+
+        <div class="order-form__group">
+            <span class="order-form__group-title">Додаткові інгредієнти:</span>
+            
+            <label class="order-form__option">
+                <input class="order-form__checkbox" type="checkbox" name="toppings[]" value="cheese">
+                <span class="order-form__option-text">Подвійний сир</span>
+            </label>
+
+            <label class="order-form__option">
+                <input class="order-form__checkbox" type="checkbox" name="toppings[]" value="mushrooms">
+                <span class="order-form__option-text">Гриби</span>
+            </label>
+
+            <label class="order-form__option">
+                <input class="order-form__checkbox" type="checkbox" name="toppings[]" value="spicy">
+                <span class="order-form__option-text">Гострий перець</span>
+            </label>
+        </div>
+
+        <button class="order-form__button" type="submit" tabindex="0">Замовити</button>
+
+    </form>
+    <script src="JSOOP/JSOOP1.js
+    "></script>
+</body>
+</html>

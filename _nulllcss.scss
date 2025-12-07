@@ -1,0 +1,102 @@
+/* ===============================
+   Freelancer reset — "по життю з YouTube"
+   Лаконічний modern reset + кілька корисних утиліт
+   Коментарі українською
+   =============================== */
+
+/* 1) Box sizing — робимо усе передбачуваним */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2) Прибираємо відступи за замовчуванням */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3) Базові налаштування для html/body */
+html, body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%; /* щоб мобільні не змінювали масштаб */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #fff;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* 4) Картинки/медіа — не вилітають за контейнер */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5) Інтерфейсні елементи наслідують шрифт сторінки */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 6) Знімаємо стилі списків у призначених для навігації списках */
+ul {
+  list-style: none;
+}
+
+/* 7) Посилання — мінімальний базис */
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* 8) Кнопки — базове скидання */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* 9) Доступність: акуратний фокус (можеш змінити колір) */
+:focus {
+  outline: 3px solid Highlight; /* простий видимий фокус */
+  outline-offset: 2px;
+}
+
+/* 10) Таблиці — компактніше */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 11) Якщо користувач просить зменшити анімації */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 12) Клас для "прихованого, але доступного" контенту (screen-reader only) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 14) Маленькі корисні утиліти */
+.hidden { display: none !important; }
+.center { text-align: center; }
+.flex { display: flex; }
+.flex-center { display:flex; align-items:center; justify-content:center; }
+
+/* ===============================
+   Кінець reset — роби свій стиль далі нижче
+   =============================== */

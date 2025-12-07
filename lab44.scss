@@ -1,0 +1,151 @@
+@import 'nulllcss';
+
+/* 13) Простий контейнер-клас для центрування контенту (зручно для швидкого прототипу) */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+// ===============================
+// Базовий макет сторінки
+// ===============================
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // 100% висоти екрану
+  color: #ff0000;
+}
+
+.main {
+  flex:0 1 100%; // розтягуємо main, щоб футер був внизу
+  
+}
+
+
+
+.footer {
+  flex-shrink: 0; // футер не стискається
+}
+
+
+
+/*----------------ХЕДЕР --------------------*/
+/* Додай цей код у свій CSS файл */
+
+.header { /* Або який в тебе там клас для хедера */
+  position: absolute; /* Вириваємо елемент з потоку */
+  top: 0;             /* Притискаємо до верхнього краю */
+  left: 0;            /* Притискаємо до лівого краю */
+  width: 100%;        /* Розтягуємо на всю ширину */
+  
+  background-color: transparent; /* Робимо фон прозорим! */
+color: antiquewhite;
+  z-index: 100;       /* Встановлюємо вищий шар, щоб він був поверх всього іншого */
+}
+.header__inner{
+  margin-bottom: 34px;
+
+}
+.logo__icon{
+  display: flex;
+ margin: 64px auto 0px;
+  max-width: 60px;
+  max-height: 60px;
+}
+.logo__icon img{
+ max-width: 100%;
+}
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.logo__title {
+  margin: auto;
+  font-size: 48px;
+  margin-bottom: 22px;
+  padding: 5px 40px;
+  border-bottom: #ffffff solid 4px;
+}
+.logo__subtitle {
+  letter-spacing: 3px;
+}
+.nav {
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+
+}
+.nav__item {
+}
+.nav__link {
+}
+.nav__icon {
+}
+
+/*---------------------MAIN---------------*/
+
+/* === Стилі для секції "Герой" === */
+
+.hero {
+  padding-top: 150px;
+  min-height: 100vh; 
+
+  /* 2. Додаємо фонове зображення */
+  background-image: url('../img/Main.jpg'); /* Вкажи правильний шлях до фото */
+  background-size: cover; /* Масштабує фото, щоб воно покрило весь блок без деформації */
+  background-position: -100 -100; /* Фокусує фото по центру */
+  background-repeat: no-repeat; /* Забороняє повторення фото */
+
+  /* 3. НАЙВАЖЛИВІШЕ: Центрування контенту за допомогою Flexbox */
+  display: flex; /* Робимо секцію гнучким контейнером */
+  justify-content: center; /* Центрує дочірній елемент (.hero__content) по горизонталі */
+  align-items: center; /* Центрує дочірній елемент (.hero__content) по вертикалі */
+  
+  /* Опційно: для кращої читабельності тексту на фоні фото */
+  color: white; 
+  text-align: center; /* Центрує текст всередині .hero__content */
+}
+
+.hero__title {
+  font-weight: 400;
+  font-size: 96px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hero__subtitle {
+  font-size: 24px;
+  letter-spacing: 3.6px;
+  margin-bottom: 20px;
+}
+.hero__button {
+display: inline-block; /* Дозволяє задавати padding та інші блокові властивості */
+    text-decoration: none; /* Прибирає підкреслення */
+  outline: none; /* Прибирає стандартну рамку фокусу */
+
+    /* Кольори */
+    background-color: #c7a463; /* Приблизний колір фону з фото */
+    color: #f5f5f5;           /* Світлий колір тексту */
+
+    /* Відступи та розміри */
+    padding: 18px 35px; /* Внутрішні відступи (зверху/знизу та зліва/справа) */
+    border-radius: 8px; /* Легке заокруглення кутів */
+    border: none;       /* Прибираємо рамку, якщо вона є */
+  
+    font-family: 'Montserrat', sans-serif; /* Шрифт (потрібно буде підключити) */
+    font-size: 1.2rem;       /* Розмір шрифту */
+    font-weight: 500;        /* Середня насиченість шрифту */
+    text-transform: uppercase; /* Робить всі літери великими */
+    letter-spacing: 2px;     /* Відстань між літерами */
+    text-align: center;      /* Центрування тексту (про всяк випадок) */
+    cursor: pointer; /* Змінює курсор на "руку" при наведенні */
+    transition: background-color rgb(212, 150, 150) 0.3s ease;
+}
