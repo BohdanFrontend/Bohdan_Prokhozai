@@ -83,7 +83,7 @@ let a;
 
 const person = {
     firstName: 'Oleksandr',
-    age: 16,
+    age: 164git add .,
     adress: 'Lviv'
 }
 
