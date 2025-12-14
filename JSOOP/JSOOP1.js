@@ -97,7 +97,7 @@ const p = new Proxy(person, {
             target[prop] = value 
         }
         else {
-            throw new Error(`no particular prop`)
+            throw new Error(`no parti h cular prop`)
         }
     }
 })
